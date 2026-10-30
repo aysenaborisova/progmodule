@@ -1,22 +1,33 @@
 /*
 using System;
+using System.Collections.Generic;
 
 class Task3
 {
     static void Main()
     {
-        double sum = 0;
+        List<int> numbers = new List<int>();
 
-        for (int i = 1; i <= 7; i++)
+        while (true)
         {
-            Console.Write("Введите температуру за день " + i + ": ");
-            double t = Convert.ToDouble(Console.ReadLine());
-            sum = sum + t;
+            Console.Write("Введите число: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            if (numbers.Contains(x))
+            {
+                Console.WriteLine("Повторение! Конец ввода.");
+                break;
+            }
+
+            numbers.Add(x);
         }
 
-        double average = sum / 7;
-
-        Console.WriteLine("Средняя температура за неделю: " + average);
+        Console.WriteLine("Массив чисел:");
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+        Console.WriteLine();
     }
 }
 */
